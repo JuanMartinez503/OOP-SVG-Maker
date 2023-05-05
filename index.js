@@ -1,8 +1,9 @@
 const inquirer = require("inquirer");
 const {writeFile}= require('fs/promises')
-const Circle = require('./lib/circle')
+const Circle = require('./lib/circle.js')
 const Square = require('./lib/square.js')
-const Triangle = require('./lib/triangle.js')
+const Triangle = require('./lib/triangle.js');
+const { error } = require("console");
 
 const validateInput = (input) => {
   if(input.length > 3) {
@@ -49,4 +50,21 @@ inquirer.prompt([
 ])
     .then(data=>{
         const {name, textColor, shape, fillColor} = data
+        let svg;
+        switch (shape) {
+            case 'square':
+                svg= new Square(name, textColor, fillColor).render()
+                break;
+            case 'triangle':
+                svg = new Triangle(name, textColor , fillColor).render()
+                break;
+            case 'circle':
+                svg = new Circle(name, textColor , fillColor).render()
+                    break;
+            default:
+                break;
+        }
+        writeFile('./examples/logo.svg', svg)
+        .then(()=>console.log('logo.svg was created'))
+        .catch(err=>console.error(err))
     })
