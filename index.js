@@ -62,6 +62,7 @@ inquirer.prompt([
                 svg = new Circle(name, textColor , fillColor).render()
                     break;
             default:
+                throw new Error('This is the default settings')
                 break;
         }
         writeFile('./examples/logo.svg', svg)
