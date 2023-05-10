@@ -1,4 +1,6 @@
- <svg width="300" height="200">
-        <polygon points="150, 18 244, 182 56, 182"  fill="purple" />
-        <text x="150" y="125" fill="pink" text-anchor="middle" font-size="50">Pip</text>
-      </svg>
+
+    <svg width="300" height="200">
+      <circle cx="150" cy="100" r="75" fill="purple" />
+      <text x="150" y="110" fill="pink" text-anchor="middle" font-size="50">Jua</text>
+    </svg>
+  
