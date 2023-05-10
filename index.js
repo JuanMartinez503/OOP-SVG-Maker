@@ -3,7 +3,7 @@ const { writeFile } = require("fs/promises");
 const Circle = require("./lib/circle.js");
 const Square = require("./lib/square.js");
 const Triangle = require("./lib/triangle.js");
-const { error } = require("console");
+
 
 const validateInput = (input) => {
   //will validate to make sure that the input in less than 3
