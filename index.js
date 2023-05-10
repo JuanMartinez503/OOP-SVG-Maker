@@ -11,14 +11,7 @@ const validateInput = (input) => {
   } 
   return true
 }
-const validateColor = function(color) {
-    const colorRegex = /^#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$|^([a-zA-Z]+)$/; // matches either a valid hex color or color keyword
-    if(colorRegex.test(color)) {
-      return true;
-    } else {
-      return "Please enter a valid color value";
-    }
-  }
+
 inquirer.prompt([
   {
     type: "input",
@@ -31,7 +24,6 @@ inquirer.prompt([
     message:
       "What text color would you like?(Enter a color keyword OR a hexadecimal color)",
     name: "textColor",
-    validate: validateColor,
   },
   {
     type: "list",
@@ -44,7 +36,6 @@ inquirer.prompt([
     message:
       "What color would you like your shape to have? (Enter a color keyword OR a hexadecimal color)",
     name: "fillColor",
-    validate: validateColor,
 
   },
 ])
